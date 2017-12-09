@@ -20,6 +20,10 @@ class EmployedFemaleBuilder implements PersonBuilderInterface {
     $this->person->employed = true;
   }
 
+  public function setAge() {
+    $this->person->age = 25;
+  }
+
   public function getResult() {
     return $this->person;
   }

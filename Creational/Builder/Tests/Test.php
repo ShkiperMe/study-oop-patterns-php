@@ -18,4 +18,4 @@ print '<br>';
 
 $employedFemaleBuilder   = new EmployedFemaleBuilder();
 $employedFemale   = $director->build($employedFemaleBuilder);
-print_r($employedMale);
+print_r($employedFemale);

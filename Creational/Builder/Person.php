@@ -7,6 +7,8 @@ class Person {
 
   public $gender;
 
+  public $age;
+
   const GENDER_MALE   = "Male";
 
   const GENDER_FEMALE = "Female";
