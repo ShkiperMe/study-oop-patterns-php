@@ -2,32 +2,24 @@
 
 namespace Patterns\Structural\Decorator\Tests;
 
+use Patterns\Structural\Decorator\ChristmasEmailBody;
+use Patterns\Structural\Decorator\Email;
+use Patterns\Structural\Decorator\NewYearEmailBody;
+
 require_once '../../../vendor/autoload.php';
 
-use Patterns\Structural\Decorator\Book;
-use Patterns\Structural\Decorator\BookTitleDecorator;
-use Patterns\Structural\Decorator\BookTitleStarDecorator;
-use Patterns\Structural\Decorator\BookTitleExclaimDecorator;
+$email = new Email();
+$email->loadBody();
 
-$patternBook = new Book('Design Patterns', 'Gamma, Helm, Johnson, and Vlissides');
-$decorator = new BookTitleDecorator($patternBook);
-$starDecorator = new BookTitleStarDecorator($decorator);
-$exclaimDecorator = new BookTitleExclaimDecorator($decorator);
+$email = new Email();
+$email = new ChristmasEmailBody($email);
+$email->loadBody();
 
-print $decorator->showTitle();
-print '<br>';
+$email = new Email();
+$email = new NewYearEmailBody($email);
+$email->loadBody();
 
-$exclaimDecorator->exclaimTitle();
-$exclaimDecorator->exclaimTitle();
-
-print $decorator->showTitle();
-print '<br>';
-
-$starDecorator->starTitle();
-
-print $decorator->showTitle();
-print '<br>';
-
-$decorator->resetTitle();
-print $decorator->showTitle();
-print '<br>';
+$email = new Email();
+$email = new ChristmasEmailBody($email);
+$email = new NewYearEmailBody($email);
+$email->loadBody();
